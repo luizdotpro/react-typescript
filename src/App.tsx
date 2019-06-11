@@ -1,7 +1,7 @@
 import React from 'react';
 import { Store } from './Store';
 import './index.css'
-import { IAction, IEpisode } from './interfaces'
+import { IAction, IEpisode } from './interfaces'
 
 
 const App: React.FunctionComponent = (): JSX.Element => {
@@ -22,28 +22,58 @@ const App: React.FunctionComponent = (): JSX.Element => {
     })
   }
 
-  const toggleFavAction = ( episode: IEpisode ): IAction => dispatch({
-    type: 'ADD_FAV',
-    payload: episode
-  })
+  const toggleFavAction = (episode: IEpisode): IAction => {
+    const episodeInFav: boolean = state.favourites.includes(episode)
+    console.log(episodeInFav)
+
+    let dispatchObj = {
+      type: 'ADD_FAV',
+      payload: episode
+    }
+
+    if (episodeInFav){
+      const favWithoutEpisode = state.favouritesv.filter( 
+        (fav: IEpisode)  => fav.id !== episode.id
+        )
+
+      dispatchObj = {
+        type: 'REMOVE_FAV',
+        payload: favWithoutEpisode
+      } 
+    }
+
+    return dispatch(dispatchObj)
+  }
 
   console.log('state -', state)
 
   return (
     <>
       <header className="header">
-        <h2>Rick and Morty Episode picker.</h2>
-        <p> Pick your favourite episode!</p>
+        <div>
+          <h2>Rick and Morty Episode picker.</h2>
+          <p> Pick your favourite episode!</p>
+        </div>
+        <div>
+          <p> {`Number of favourites: ${state.favourites.length}`}</p>
+        </div>
       </header>
       <section className="episodeLayout">
         {state.episodes.map((episode: IEpisode) => {
           if (episode.image) {
             return (
-              <section key={episode.id} className="episodeBox">
+              <section
+                key={episode.id}
+                className="episodeBox"
+              >
                 <img src={episode.image.medium} alt={`Rick and Morty ${episode.name}`} />
                 <div>{episode.name}</div>
                 <section>Season: {episode.season} Number: {episode.number} </section>
-                <button type="button" onClick={() => toggleFavAction(episode)}>Fav</button>
+                <button 
+                    type="button" 
+                    onClick={() => toggleFavAction(episode)}>
+                      {state.favourites.includes(episode) ? 'Unfavourite' : 'Favourite'}
+                </button>
               </section>
             )
           }

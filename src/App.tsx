@@ -1,7 +1,8 @@
 import React from 'react'
 import { Store } from './Store'
 import './index.css'
-import { IAction, IEpisode } from './interfaces'
+import { IAction, IEpisode, IEpisodeProps } from './interfaces'
+import { Link } from '@reach/router'
 
 const EpisodesList = React.lazy<any>(() => import('./EpisodesList'))
 
@@ -46,7 +47,6 @@ const App: React.FunctionComponent = (): JSX.Element => {
 
         return dispatch(dispatchObj)
     }
-
     const props = {
         episodes: state.episodes,
         toggleFavAction,
@@ -63,7 +63,8 @@ const App: React.FunctionComponent = (): JSX.Element => {
                     <p> Pick your favourite episode!</p>
                 </div>
                 <div>
-                    <p> {`Number of favourites: ${state.favourites.length}`}</p>
+                    <Link to="/">Home</Link>
+                    <Link to="/faves">{`Number of favourites: ${state.favourites.length}`}</Link>
                 </div>
             </header>
             <React.Suspense fallback={<div> Loadding ... </div>}>

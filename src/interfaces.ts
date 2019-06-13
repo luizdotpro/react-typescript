@@ -30,6 +30,6 @@ export interface IEpisode {
 
 export interface IEpisodeProps {
     episodes: Array<IEpisode>
-    toggleFavAction: (episode: IEpisode) => IAction,
+    toggleFavAction: (state: IState, dispatch: any, episode: IEpisode) => IAction,
     favourites: Array<IEpisode>
   }

@@ -7,6 +7,7 @@ const App = (props: any): JSX.Element => {
     const { state } = React.useContext(Store)
 
     console.log('state -', state)
+    //https://api.imfootball.io/search/suggestions/editorial?langId=de
 
     return (
         <>

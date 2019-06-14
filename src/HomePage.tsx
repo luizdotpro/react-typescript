@@ -2,6 +2,7 @@ import React from 'react'
 import { Store } from './Store'
 import './index.css'
 import { fetchDataAction, toggleFavAction } from './Actions'
+import { IEpisodeProps } from './interfaces';
 
 const EpisodesList = React.lazy<any>(() => import('./EpisodesList'))
 
@@ -13,10 +14,11 @@ export default function HomePage() {
         console.log('useEffect hook')
     })
 
-    const props = {
+    const props: IEpisodeProps = {
         episodes: state.episodes,
         toggleFavAction,
         favourites: state.favourites,
+        store: { state, dispatch }
     }
 
     return (

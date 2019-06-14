@@ -21,7 +21,7 @@ import { IAction, IEpisode, IState } from './interfaces'
         }
 
         if (episodeInFav) {
-            const favWithoutEpisode = state.favourites.filter(
+            const favWithoutEpisode: any = state.favourites.filter(
                 (fav: IEpisode) => fav.id !== episode.id
             )
 

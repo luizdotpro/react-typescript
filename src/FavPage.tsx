@@ -5,11 +5,11 @@ import { toggleFavAction } from './Actions'
 
 const EpisodesList = React.lazy<any>(() => import('./EpisodesList'))
 
-export default function FavPage() {
+export default function FavPage(): JSX.Element {
     const { state, dispatch } = React.useContext(Store)
     
     const props: IEpisodeProps = {
-        episodes: state.episodes,
+        episodes: state.favourites,
         toggleFavAction,
         favourites: state.favourites,
         store: { state, dispatch }

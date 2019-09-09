@@ -13,7 +13,7 @@ const App = (props: any): JSX.Element => {
         <>
             <header className="header">
                 <div>
-                    <h2>Rick and Morty Episode picker.</h2>
+                    <h2>Rick and Morty Episode picker..</h2>
                     <p> Pick your favourite episode!</p>
                 </div>
                 <div>

@@ -1,0 +1,17 @@
+{
+  "files": {
+    "static/js/0.82368298.chunk.js": "/react-typescript/static/js/0.82368298.chunk.js",
+    "static/js/0.82368298.chunk.js.map": "/react-typescript/static/js/0.82368298.chunk.js.map",
+    "main.css": "/react-typescript/static/css/main.ca006aa8.chunk.css",
+    "main.js": "/react-typescript/static/js/main.8376d0a5.chunk.js",
+    "main.js.map": "/react-typescript/static/js/main.8376d0a5.chunk.js.map",
+    "runtime~main.js": "/react-typescript/static/js/runtime~main.6dbbc307.js",
+    "runtime~main.js.map": "/react-typescript/static/js/runtime~main.6dbbc307.js.map",
+    "static/js/3.16d5c38f.chunk.js": "/react-typescript/static/js/3.16d5c38f.chunk.js",
+    "static/js/3.16d5c38f.chunk.js.map": "/react-typescript/static/js/3.16d5c38f.chunk.js.map",
+    "index.html": "/react-typescript/index.html",
+    "precache-manifest.6fd2dc62e3834063122eb7f16b1c4194.js": "/react-typescript/precache-manifest.6fd2dc62e3834063122eb7f16b1c4194.js",
+    "service-worker.js": "/react-typescript/service-worker.js",
+    "static/css/main.ca006aa8.chunk.css.map": "/react-typescript/static/css/main.ca006aa8.chunk.css.map"
+  }
+}

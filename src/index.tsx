@@ -11,7 +11,7 @@ const RouterPage = (props: { pageComponent: JSX.Element } & RouteComponentProps)
 ReactDOM.render(<StoreProvider>
     <Router>
         <App path='/' >
-            <RouterPage pageComponent={<HomePage />} path="/" />
+            <RouterPage default pageComponent={<HomePage />} path="/" />
             <RouterPage pageComponent={<FavPage />} path="/faves" />
         </App>
     </Router>
